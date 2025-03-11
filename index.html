@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPTV 2025</title>
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/iransans-font@v6.0.0/dist/IRANSans.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="intro-screen">
+    <div id="header">
+      <div id="weather">
+        <span id="weather-icon"></span>
+        <span id="weather-info">در حال بارگذاری...</span>
+      </div>
+      <div id="clock">
+        <span id="clock-icon">🕒</span>
+        <span id="clock-time">در حال بارگذاری...</span>
+      </div>
+    </div>
+    <div id="menu-container">
+      <ul id="menu-list">
+        <li data-section="live" class="focused">
+          <span class="icon">📺</span> پخش زنده
+        </li>
+        <li data-section="music">
+          <span class="icon">🎵</span> موسیقی
+        </li>
+        <li data-section="movies">
+          <span class="icon">🎬</span> فیلم
+        </li>
+        <li data-section="weather">
+          <span class="icon">🌤️</span> آب و هوا
+        </li>
+      </ul>
+    </div>
+    <div id="settings" class="hidden">
+      <h1>تنظیمات</h1>
+      <div id="config-form">
+        <label for="server-ip">آدرس سرور (IP:Port):</label>
+        <input type="text" id="server-ip" placeholder="مثال: 217.219.74.138:9981" value="217.219.74.138:9981">
+        <label for="username">نام کاربری:</label>
+        <input type="text" id="username" placeholder="نام کاربری">
+        <label for="password">رمز عبور:</label>
+        <input type="password" id="password" placeholder="رمز عبور">
+        <button onclick="saveConfig()">ذخیره و شروع</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+  <script src="intro.js"></script>
+</body>
+</html>
