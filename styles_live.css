@@ -1,0 +1,102 @@
+body {
+    font-family: 'IRANSans', sans-serif;
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    background: #0d1117;
+    color: #e6edf3;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  #sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1f2b 0%, #141821 100%);
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
+    transform: translateX(100%);
+  }
+  
+  #sidebar.visible {
+    transform: translateX(0);
+  }
+  
+  #sidebar h1 {
+    font-size: 24px;
+    margin: 0 0 25px;
+    color: #58a6ff;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(88, 166, 255, 0.3);
+  }
+  
+  #search-box {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    background: #161b22;
+    color: #e6edf3;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
+  
+  #search-box:focus {
+    border-color: #58a6ff;
+    outline: none;
+  }
+  
+  #channel-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #channel-list li {
+    padding: 14px;
+    background: #21262d;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  #channel-list li:hover,
+  #channel-list li.focused {
+    background: #30363d;
+    transform: translateX(-5px);
+    box-shadow: 0 4px 10px rgba(88, 166, 255, 0.2);
+  }
+  
+  #channel-list li.active {
+    background: linear-gradient(90deg, #1f6feb 0%, #58a6ff 100%);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(88, 166, 255, 0.4);
+  }
+  
+  #main-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0d1117;
+  }
+  
+  #player {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    object-fit: contain;
+  }
